@@ -1,0 +1,35 @@
+/* styles/navbar.css */
+.nav-link {
+  @apply relative transition duration-200 ease-in-out text-gray-800 dark:text-gray-100;
+  @apply hover:text-indigo-600 dark:hover:text-indigo-400 active:text-indigo-800 dark:active:text-indigo-300;
+  @apply hover:scale-110 active:scale-110;
+}
+.nav-link {
+  @apply text-lg;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.5rem; 
+  height: 3px;
+  border-radius: 2px;
+  background-color: theme('colors.indigo.600'); 
+  transform: scaleX(0);
+  transition: transform 0.2s ease-in-out;
+}
+
+.dark .nav-link::after {
+  background-color: theme('colors.indigo.400');
+}
+
+.nav-link:hover::after{
+  transform: scaleX(1);
+}
+.nav-link:active::after {
+  transform: scaleX(1);
+}
+.nav-link.active::after {
+  transform: scaleX(1);
+}
